@@ -9,10 +9,10 @@ def get_readme_content():
 setup(
     name = 'aio-geojson-query',
     version = '0.0.1',
-    description = 'Something something geojson',
+    description = 'A generalized client for aio-geojson-client',
     author = 'Chris F Ravenscroft',
     author_email = 'chris@voilaweb.com',
-    url = 'https://github.com/Fusion/pywhistle',
+    url = 'https://github.com/exxamalte/python-aio-geojson-client',
     license = 'MIT',
     long_description = get_readme_content(),
     packages = ['aio_geojson_query',],

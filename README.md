@@ -1,17 +1,17 @@
 # python-aio-geojson-query
 
-This library is my attempt at creating a generalized client for the [aio-json-client](https://github.com/exxamalte/python-aio-geojson-nsw-rfs-incidents) library.
+This library is my attempt at creating a generalized client for the [aio-geojson-client](https://github.com/exxamalte/python-aio-geojson-client) library.
 
 Of course, this requires some uncomfortable contorting as the properties in a GeoJson feed are free-form (see [rfc7946](https://tools.ietf.org/html/rfc7946))
 
 This is currently under development, so apologies for the bugs.
 
 ## Installation
-`pip install something-something (TODO!)`
+`pip install aio-geojson-query`
 
 ## Usage
 See below for examples of how this library can be used. After instantiating a 
-particular class - feed or feed manager - and supply the required parameters, 
+particular class - feed or feed manager - and supplying the required parameters, 
 you can call `update` to retrieve the feed data. The return value 
 will be a tuple of a status code and the actual data in the form of a list of 
 feed entries specific to the selected feed.
