@@ -72,11 +72,12 @@ If you do not specify mappings for these variables, the library may attempt to g
 
 For instance:
 
-| Property      |                  | Guessed Names                              |
-| ------------- | ---------------- | ------------------------------------------ |
-| `date`        | Mandatory        | `time`, `date`                             |
-| `dateformat`  | A pseudo mapping | Helps the library parse the date property. |
-| `description` |                  | `description`, `details`                   |
+| Property      |                                | Guessed Names                              |
+| ------------- | ------------------------------ | ------------------------------------------ |
+| `id`          | Each entry's unique identifier | `id`, `guid` (@see FeedManager)            |
+| `date`        | Mandatory                      | `time`, `date`                             |
+| `dateformat`  | A pseudo mapping               | Helps the library parse the date property. |
+| `description` |                                | `description`, `details`                   |
 
 #### Date Parsing
 
@@ -175,3 +176,8 @@ different dates:
   This requires that the underlying feed data actually contains a suitable 
   date. This date may be useful if the consumer of this library wants to 
   process feed entries differently if they haven't actually been updated.
+
+### Specify `id`
+
+When in doubt... make sure you specify a mapping for `id` -- if only one entry is returned by the feed manager when you expect multiple entries, it is likely that the feed entries are not properly identified. If necessary, specify a mapping for `id` to a property that is unique to each entry. For instance, in the USGS earthquake feed, such an entry is `code`.
+

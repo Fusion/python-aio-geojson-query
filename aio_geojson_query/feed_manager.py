@@ -1,4 +1,3 @@
-"""Feed Manager for NSW Rural Fire Service Incidents feed."""
 from typing import List, Dict, Tuple, Callable, Awaitable
 
 from aio_geojson_client.feed_manager import FeedManagerBase
@@ -22,7 +21,6 @@ class GeoJsonQueryFeedManager(FeedManagerBase):
                  mappings: Dict[str, str] = None,
                  status_callback: Callable[[StatusUpdate],
                                            Awaitable[None]] = None):
-        """Initialize the NSW Rural Fire Services Feed Manager."""
         feed = GeoJsonQueryFeed(
             websession,
             endpoint,

@@ -8,13 +8,14 @@ def get_readme_content():
 
 setup(
     name = 'aio-geojson-query',
-    version = '0.0.1',
+    version = '0.0.2',
     description = 'A generalized client for aio-geojson-client',
     author = 'Chris F Ravenscroft',
     author_email = 'chris@voilaweb.com',
     url = 'https://github.com/exxamalte/python-aio-geojson-client',
     license = 'MIT',
     long_description = get_readme_content(),
+    long_description_content_type="text/markdown",
     packages = ['aio_geojson_query',],
     classifiers = [
         'License :: OSI Approved :: MIT License',
