@@ -8,7 +8,7 @@ def get_readme_content():
 
 setup(
     name = 'aio-geojson-query',
-    version = '0.0.2',
+    version = '0.0.3',
     description = 'A generalized client for aio-geojson-client',
     author = 'Chris F Ravenscroft',
     author_email = 'chris@voilaweb.com',
