@@ -27,7 +27,8 @@ geo_location:
     latitude: your_latitude
     longitude: your_longitude
     radius: desired_radius_in_km
-    entity_namespace: 'whatever_you_want'
+    criteria:
+      - your_criteria
     mappings:
       id: id_field_name
       dateformat: date_format
@@ -36,6 +37,7 @@ geo_location:
       - extra_field_1
       - ...
       - extra_field_n
+    entity_namespace: 'whatever_you_want'      
 ```
 
 | Parameter                     |                                                              |
@@ -44,6 +46,7 @@ geo_location:
 | endpoint_url                  | Your GeoJson feed.                                           |
 | your_latitude, your_longitude | If omitted, your home coordinates will be used.              |
 | desired_radius_in_km          | Self explanatory.                                            |
+| your_criteria                 | e.g. `mag > 4.0`                                             |
 | id_field_name, etc.           | To parse your feed correctly. See the [main README file](https://github.com/Fusion/python-aio-geojson-query/blob/master/README.md). |
 
 You can use this newly created source in e.g. Lovelace components such as `Map`:

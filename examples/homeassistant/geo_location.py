@@ -81,7 +81,7 @@ async def async_setup_platform(
     )
     radius_in_km = config[CONF_RADIUS]
     endpoint = config[CONF_ENDPOINT]
-    criteria = config.get(CONF_CRITERIA)
+    criteria = [cr.split(' ', 2) for cr in config.get(CONF_CRITERIA)]
     mappings = config.get(CONF_MAPPINGS)
     xtrafields = config.get(CONF_XTRAFIELDS)
 

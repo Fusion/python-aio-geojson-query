@@ -1,2 +1,2 @@
-ATTRIBUTION = "The original producer of this information"
+ATTRIBUTION = " "
 CUSTOM_ATTRIBUTE = "custom_attribute"
