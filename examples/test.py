@@ -17,6 +17,7 @@ async def main() -> None:
                                     ['category', '==', 'Advice']
                                     ],
                                 mappings={
+                                    "dateformat": "%d/%m/%Y %I:%M:%S %p",
                                     "date": "pubDate",
                                     "location": "description~~LOCATION: (?P<{}>[^<]+) <br"
                                 })
@@ -38,6 +39,22 @@ async def main() -> None:
                                     "date": "updated"
                                 })
         status, entries = await feed2.update()
+        print(status)
+        for entry in entries:
+            print("%s [%s]: @%s" % (entry.title, entry.publication_date, entry.title))
+
+        # And wildfires, around LA as well
+        feed3 = GeoJsonQueryFeed(websession,
+                                "https://www.fire.ca.gov/umbraco/api/IncidentApi/GeoJsonList?inactive=false",
+                                (34.052235, -118.243683),
+                                filter_radius=50,
+                                mappings={
+                                    "id": "UniqueId",
+                                    "dateformat": "iso",
+                                    "date": "Updated",
+                                    "title": "Name"
+                                })
+        status, entries = await feed3.update()
         print(status)
         for entry in entries:
             print("%s [%s]: @%s" % (entry.title, entry.publication_date, entry.title))

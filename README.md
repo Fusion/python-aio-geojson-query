@@ -83,11 +83,12 @@ For instance:
 
 The `dateformat` pseudo mapping can be:
 
-| Format              |      | Meaning                                         |
-| ------------------- | ---- | ----------------------------------------------- |
-| `seconds`           |      | This is an epoch timestamp,                     |
-| `milliseconds`      |      | A timestamp in milliseconds.                    |
-| An arbitrary string |      | Used by the library in the `strptime` function. |
+| Format              |      | Meaning                                                    |
+| ------------------- | ---- | ---------------------------------------------------------- |
+| `seconds`           |      | This is an epoch timestamp,                                |
+| `milliseconds`      |      | A timestamp in milliseconds.                               |
+| `iso`               |      | ISO-3601 or RFC-3339 compatible format. Allows variations. |
+| An arbitrary string |      | Used by the library in the `strptime` function.            |
 
 ## Example
 
@@ -113,6 +114,7 @@ async def main() -> None:
                                     ['category', '==', 'Advice']
                                     ],
                                 mappings={
+                                    "dateformat": "iso",
                                     "date": "pubDate",
                                     "location": "description~~LOCATION: (?P<{}>[^<]+) <br"
                                 })

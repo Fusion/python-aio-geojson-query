@@ -3,6 +3,7 @@ import pytz
 import calendar
 from datetime import datetime
 from time import strptime
+import dateutil.parser
 
 import logging
 import re
@@ -74,15 +75,15 @@ class GeoJsonQueryEntry(FeedEntry):
                     publication_date = datetime.fromtimestamp(publication_date)
                 elif date_format == 'milliseconds':
                     publication_date = datetime.fromtimestamp(publication_date / 1000)
+                elif date_format == 'iso':
+                    publication_date = dateutil.parser.isoparse(publication_date)
                 else:
                 # Parse the date. Example: 15/09/2018 9:31:00 AM
                     date_struct = strptime(publication_date, date_format)
                     publication_date = datetime.fromtimestamp(calendar.timegm(
                         date_struct), tz=pytz.utc)
             else:
-                    date_struct = strptime(publication_date, "%d/%m/%Y %I:%M:%S %p")
-                    publication_date = datetime.fromtimestamp(calendar.timegm(
-                        date_struct), tz=pytz.utc)
+                    publication_date = dateutil.parser.isoparse(publication_date)
         return publication_date
 
 
