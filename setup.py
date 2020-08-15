@@ -8,7 +8,7 @@ def get_readme_content():
 
 setup(
     name = 'aio-geojson-query',
-    version = '0.0.3',
+    version = '0.0.4',
     description = 'A generalized client for aio-geojson-client',
     author = 'Chris F Ravenscroft',
     author_email = 'chris@voilaweb.com',
@@ -31,6 +31,7 @@ setup(
     install_requires = [
         'aiodns', 'aiohttp>=3.5.4',
         'aio_geojson_client>=0.13',
+        'python-dateutil>=2.8.1',
         'pytz>=2019.01'
         ],
 )
